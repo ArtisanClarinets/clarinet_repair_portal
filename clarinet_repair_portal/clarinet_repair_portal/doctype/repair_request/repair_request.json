@@ -1,0 +1,40 @@
+{
+  "doctype": "DocType",
+  "name": "Repair Request",
+  "module": "Clarinet Repair Portal",
+  "autoname": "RR-.YYYY.-.#####",
+  "custom": 0,
+  "sort_field": "modified",
+  "sort_order": "desc",
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1},
+    {"role": "Repair Technician", "read": 1, "write": 1},
+    {"role": "Reception", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "Sales User", "read": 1},
+    {"role": "Customer", "read": 1}
+  ],
+  "fields": [
+    {"fieldname": "customer", "label": "Customer", "fieldtype": "Link", "options": "Customer", "reqd": 1},
+    {"fieldname": "contact", "label": "Contact", "fieldtype": "Link", "options": "Contact", "fetch_from": "customer.primary_contact"},
+    {"fieldname": "instrument_type", "label": "Instrument Type", "fieldtype": "Select", "options": "A\nB♭\nE♭\nC\nBass", "reqd": 1},
+    {"fieldname": "instrument_brand", "label": "Instrument Brand", "fieldtype": "Data"},
+    {"fieldname": "instrument_model", "label": "Instrument Model", "fieldtype": "Data"},
+    {"fieldname": "serial_number", "label": "Serial Number", "fieldtype": "Data"},
+    {"fieldname": "date_received", "label": "Date Received", "fieldtype": "Date", "default": "Today"},
+    {"fieldname": "requested_completion_date", "label": "Requested Completion Date", "fieldtype": "Date"},
+    {"fieldname": "priority", "label": "Priority", "fieldtype": "Select", "options": "Low\nMedium\nHigh", "default": "Low"},
+    {"fieldname": "repair_type", "label": "Repair Type", "fieldtype": "Select", "options": "Maintenance\nOverhaul\nCrack Repair\nCustomization", "reqd": 1},
+    {"fieldname": "repair_technician", "label": "Repair Technician", "fieldtype": "Link", "options": "User"},
+    {"fieldname": "repair_status", "label": "Repair Status", "fieldtype": "Select", "options": "Pending\nIn Progress\nAwaiting Parts\nCompleted\nDelivered", "default": "Pending"},
+    {"fieldname": "internal_notes", "label": "Internal Notes", "fieldtype": "Text Editor"},
+
+    {"fieldname": "repair_log", "label": "Repair Log", "fieldtype": "Table", "options": "Repair Log Entry"},
+    {"fieldname": "customer_communication_log", "label": "Customer Communication Log", "fieldtype": "Table", "options": "Communication"},
+    {"fieldname": "quotation_reference", "label": "Quotation Reference", "fieldtype": "Link", "options": "Quotation"},
+    {"fieldname": "sales_invoice_reference", "label": "Sales Invoice Reference", "fieldtype": "Link", "options": "Sales Invoice"},
+
+    {"fieldname": "requested_services", "label": "Requested Services", "fieldtype": "Table", "options": "Requested Service"},
+    {"fieldname": "repair_pads_used", "label": "Repair Pads Used", "fieldtype": "Table", "options": "Repair Pads Used"},
+    {"fieldname": "repair_qa_checklist", "label": "QA Checklist", "fieldtype": "Table", "options": "Repair QA Step"}
+  ]
+}

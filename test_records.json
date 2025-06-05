@@ -1,0 +1,29 @@
+[
+  {
+    "doctype": "Customer",
+    "customer_name": "Test Customer",
+    "customer_type": "Individual"
+  },
+  {
+    "doctype": "Instrument",
+    "instrument_id": "TEST123",
+    "instrument_type": "Clarinet",
+    "serial_number": "SN123"
+  },
+  {
+    "doctype": "Instrument Tracker",
+    "instrument": "TEST123",
+    "location": "Intake"
+  },
+  {
+    "doctype": "Repair Request",
+    "customer": "Test Customer",
+    "instrument_id": "TEST123",
+    "instrument_tracker": "TEST123"
+  },
+  {
+    "doctype": "Instrument Condition Log",
+    "repair_request": "TEST123",
+    "condition_note": "Surface wear and tarnish"
+  }
+]

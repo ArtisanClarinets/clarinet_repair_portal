@@ -1,0 +1,65 @@
+{
+  "doctype": "DocType",
+  "name": "Repair Step",
+  "module": "clarinet_repair_portal",
+  "custom": 0,
+  "beta": 0,
+  "fields": [
+    {
+      "fieldname": "step_code",
+      "fieldtype": "Data",
+      "label": "Step Code",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "step_name",
+      "fieldtype": "Data",
+      "label": "Step Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Text",
+      "label": "Detailed Description"
+    },
+    {
+      "fieldname": "default_duration_minutes",
+      "fieldtype": "Int",
+      "label": "Estimated Duration (min)"
+    },
+    {
+      "fieldname": "tool_required",
+      "fieldtype": "Link",
+      "label": "Tool Required",
+      "options": "Tool"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    },
+    {
+      "role": "Repair Technician",
+      "read": 1
+    }
+  ],
+  "editable_grid": 1,
+  "sort_field": "step_code",
+  "sort_order": "ASC",
+  "track_changes": 1,
+  "track_views": 1,
+  "allow_rename": 1,
+  "search_fields": "step_code, step_name",
+  "title_field": "step_name"
+}

@@ -1,0 +1,32 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+{% if frappe.session.user != "Guest" and frappe.session.user == doc.customer %}
+<div class="container">
+  <h2>{{ doc.instrument_type }} — {{ doc.serial_number }}</h2>
+  <p><strong>Customer:</strong> {{ doc.customer }}</p>
+  <p><strong>Model:</strong> {{ doc.manufacturer }} {{ doc.model }}</p>
+  <p><strong>Year:</strong> {{ doc.year_of_manufacture or "N/A" }}</p>
+  <p><strong>Wood Type:</strong> {{ doc.wood_type or "N/A" }}</p>
+  <hr>
+  <h4>Repair History</h4>
+  {% if doc.repair_history %}
+    <ul>
+      {% for row in doc.repair_history %}
+        <li><strong>{{ row.repair_event_date }}:</strong> {{ row.summary }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No repair history recorded.</p>
+  {% endif %}
+  {% if doc.instrument_photo %}
+    <hr>
+    <h4>Photo</h4>
+    <img src="{{ doc.instrument_photo }}" class="img-fluid mt-2" style="max-height:300px">
+  {% endif %}
+  <hr>
+  <a href="/app/customer-instrument-profile/{{ doc.name }}" class="btn btn-primary">Edit Instrument</a>
+</div>
+{% else %}
+<p>You must be logged in as the instrument owner to view this profile.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,62 @@
+{
+  "doctype": "Workspace",
+  "name": "Repair Portal",
+  "module": "clarinet_repair_portal",
+  "public": 1,
+  "label": "Repair Portal",
+  "icon": "quality-3",
+  "title": "Repair Portal",
+  "content": "[\n  {\"id\":\"hdr1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Clarinet Repair Dashboard</b></span>\",\"col\":12}},\n  {\"id\":\"sc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Repair Request\",\"col\":3}},\n  {\"id\":\"sc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Repair Inspection\",\"col\":3}},\n  {\"id\":\"sc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Instrument Tracker\",\"col\":3}},\n  {\"id\":\"sc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Playtest Log\",\"col\":3}},\n  {\"id\":\"sp1\",\"type\":\"spacer\",\"data\":{\"col\":12}},\n  {\"id\":\"hdr2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & QA</b></span>\",\"col\":12}},\n  {\"id\":\"card_intake\",\"type\":\"card\",\"data\":{\"card_name\":\"Intake\",\"col\":4}},\n  {\"id\":\"card_inspection\",\"type\":\"card\",\"data\":{\"card_name\":\"Inspection\",\"col\":4}},\n  {\"id\":\"card_service\",\"type\":\"card\",\"data\":{\"card_name\":\"Service Planning\",\"col\":4}},\n  {\"id\":\"card_logging\",\"type\":\"card\",\"data\":{\"card_name\":\"Repair Logging\",\"col\":4}},\n  {\"id\":\"card_qa\",\"type\":\"card\",\"data\":{\"card_name\":\"QA\",\"col\":4}},\n  {\"id\":\"card_tools\",\"type\":\"card\",\"data\":{\"card_name\":\"Tools & Enhancements\",\"col\":4}}\n]",
+  "shortcuts": [
+    {"label": "Repair Request", "link_to": "Repair Request", "type": "DocType"},
+    {"label": "Repair Inspection", "link_to": "Repair Inspection", "type": "DocType"},
+    {"label": "Instrument Tracker", "link_to": "Instrument Tracker", "type": "DocType"},
+    {"label": "Playtest Log", "link_to": "Playtest Log", "type": "DocType"}
+  ],
+  "links": [
+    {"type": "Card Break", "label": "Intake", "link_type": "DocType"},
+    {"type": "Link", "label": "Customer Instrument Profile", "link_to": "Customer Instrument Profile", "link_type": "DocType"},
+    {"type": "Link", "label": "Customer Consent Form", "link_to": "Customer Consent Form", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair Request", "link_to": "Repair Request", "link_type": "DocType"},
+
+    {"type": "Card Break", "label": "Inspection", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair Inspection", "link_to": "Repair Inspection", "link_type": "DocType"},
+    {"type": "Link", "label": "Instrument Condition Log", "link_to": "Instrument Condition Log", "link_type": "DocType"},
+    {"type": "Link", "label": "Crack Progression", "link_to": "Crack Progression", "link_type": "DocType"},
+    {"type": "Link", "label": "Instrument Tracker", "link_to": "Instrument Tracker", "link_type": "DocType"},
+
+    {"type": "Card Break", "label": "Service Planning", "link_type": "DocType"},
+    {"type": "Link", "label": "Clarinet Pad Library", "link_to": "Clarinet Pad Library", "link_type": "DocType"},
+    {"type": "Link", "label": "Clarinet Pad Spec", "link_to": "Clarinet Pad Spec", "link_type": "DocType"},
+    {"type": "Link", "label": "Requested Service", "link_to": "Requested Service", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair BOM", "link_to": "Repair BOM", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair BOM Item", "link_to": "Repair BOM Item", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair Service Category", "link_to": "Repair Service Category", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair Service Item", "link_to": "Repair Service Item", "link_type": "DocType"},
+
+    {"type": "Card Break", "label": "Repair Logging", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair Log Entry", "link_to": "Repair Log Entry", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair Pads Used", "link_to": "Repair Pads Used", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair History Log", "link_to": "Repair History Log", "link_type": "DocType"},
+    {"type": "Link", "label": "Ultrasonic Cleaning Log", "link_to": "Ultrasonic Cleaning Log", "link_type": "DocType"},
+    {"type": "Link", "label": "Technician Task Queue", "link_to": "Technician Task Queue", "link_type": "DocType"},
+    {"type": "Link", "label": "Tool Usage Log", "link_to": "Tool Usage Log", "link_type": "DocType"},
+
+    {"type": "Card Break", "label": "QA", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair QA Checklist", "link_to": "Repair QA Checklist", "link_type": "DocType"},
+    {"type": "Link", "label": "Repair QA Step", "link_to": "Repair QA Step", "link_type": "DocType"},
+    {"type": "Link", "label": "QA Log", "link_to": "QA Log", "link_type": "DocType"},
+    {"type": "Link", "label": "Playtest Log", "link_to": "Playtest Log", "link_type": "DocType"},
+
+    {"type": "Card Break", "label": "Tools & Enhancements", "link_type": "DocType"},
+    {"type": "Link", "label": "Clarinet Anatomy Condition", "link_to": "Clarinet Anatomy Condition", "link_type": "DocType"},
+    {"type": "Link", "label": "Tool", "link_to": "Tool", "link_type": "DocType"},
+    {"type": "Link", "label": "Instrument Model Spec", "link_to": "Instrument Model Spec", "link_type": "DocType"},
+    {"type": "Link", "label": "Instrument Preset Template", "link_to": "Instrument Preset Template", "link_type": "DocType"}
+  ],
+  "permissions": [
+    {"role": "Repair Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Repair Technician", "read": 1, "write": 1, "create": 0, "delete": 0},
+    {"role": "Repair Customer", "read": 1, "write": 0, "create": 0, "delete": 0}
+  ]
+}

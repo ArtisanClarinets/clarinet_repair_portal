@@ -1,0 +1,73 @@
+{
+  "doctype": "DocType",
+  "name": "Repair History Log",
+  "module": "clarinet_repair_portal",
+  "custom": 1,
+  "istable": 1,
+  "autoname": "format:RH-.YYYY.-.#####",
+  "fields": [
+    {
+      "fieldname": "repair_event_date",
+      "fieldtype": "Date",
+      "label": "Repair Event Date",
+      "default": "Today"
+    },
+    {
+      "fieldname": "related_repair",
+      "fieldtype": "Link",
+      "label": "Related Repair Request",
+      "options": "Repair Request"
+    },
+    {
+      "fieldname": "repair_type",
+      "label": "Repair Type",
+      "fieldtype": "Select",
+      "options": "Mechanical\nCosmetic\nCrack Repair\nOther"
+    },
+    {
+      "fieldname": "summary",
+      "fieldtype": "Text",
+      "label": "Repair Summary"
+    },
+    {
+      "fieldname": "technician",
+      "fieldtype": "Link",
+      "label": "Technician",
+      "options": "User"
+    },
+    {
+      "fieldname": "owner_user",
+      "fieldtype": "Data",
+      "label": "Entry Owner",
+      "fetch_from": "owner",
+      "read_only": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Repair Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1
+    },
+    {
+      "role": "Repair Technician",
+      "read": 1,
+      "write": 1,
+      "create": 0,
+      "delete": 0,
+      "submit": 1
+    },
+    {
+      "role": "Reception",
+      "read": 1,
+      "write": 1,
+      "create": 0,
+      "delete": 0,
+      "submit": 1
+    }
+  ],
+  "is_submittable": 1
+}

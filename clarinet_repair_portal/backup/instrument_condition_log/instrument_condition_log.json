@@ -1,0 +1,28 @@
+{
+  "doctype": "DocType",
+  "name": "Instrument Condition Log",
+  "module": "clarinet_repair_portal",
+  "custom": 0,
+  "istable": 1,
+  "editable_grid": 1,
+  "fields": [
+    {"fieldname": "parent", "label": "Parent", "fieldtype": "Link", "options": "Instrument Tracker", "hidden": 1},
+    {"fieldname": "parenttype", "label": "Parent Type", "fieldtype": "Data", "hidden": 1},
+    {"fieldname": "parentfield", "label": "Parent Field", "fieldtype": "Data", "hidden": 1},
+
+    {"fieldname": "repair_request", "label": "Repair Request", "fieldtype": "Link", "options": "Repair Request", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "inspection_datetime", "label": "Inspection Datetime", "fieldtype": "Datetime", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "technician", "label": "Technician", "fieldtype": "Link", "options": "User", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "instrument_type", "label": "Instrument Type", "fieldtype": "Select", "options": "B♭\nA\nE♭\nBass\nC", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "condition_notes", "label": "Condition Notes", "fieldtype": "Text Editor"},
+    {"fieldname": "pad_condition", "label": "Pad Condition", "fieldtype": "Table", "options": "Repair Pads Used"},
+    {"fieldname": "crack_observations", "label": "Crack Observations", "fieldtype": "Table", "options": "Instrument Crack Progression"},
+    {"fieldname": "photos", "label": "Photos", "fieldtype": "Attach Image"},
+    {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Draft\nIn Review\nCompleted", "default": "Draft"}
+  ],
+  "permissions": [
+    {"role": "Repair Administrator", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1},
+    {"role": "Repair Technician", "read": 1, "write": 1, "submit": 1, "create": 0, "delete": 0},
+    {"role": "Reception", "read": 1, "write": 1, "create": 1, "delete": 0, "submit": 1}
+  ]
+}

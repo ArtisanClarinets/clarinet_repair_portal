@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Repair Request-serial_number",
+    "doctype": "Custom Field",
+    "dt": "Repair Request",
+    "fieldname": "serial_number",
+    "label": "Serial Number",
+    "fieldtype": "Data",
+    "insert_after": "instrument_model",
+    "unique": 0
+  },
+  {
+    "name": "Repair BOM Item-item_name",
+    "doctype": "Custom Field",
+    "dt": "Repair BOM Item",
+    "fieldname": "item_name",
+    "label": "Item Name",
+    "fieldtype": "Data",
+    "fetch_from": "item_code.item_name",
+    "insert_after": "item_code"
+  },
+  {
+    "name": "Repair Log Entry-log_type",
+    "doctype": "Custom Field",
+    "dt": "Repair Log Entry",
+    "fieldname": "log_type",
+    "label": "Log Type",
+    "fieldtype": "Select",
+    "options": "Manual\nSystem",
+    "default": "Manual",
+    "insert_after": "note"
+  },
+  {
+    "name": "Repair QA Step-auto_timestamp",
+    "doctype": "Custom Field",
+    "dt": "Repair QA Step",
+    "fieldname": "auto_timestamp",
+    "label": "Auto Timestamp",
+    "fieldtype": "Check",
+    "default": 1,
+    "insert_after": "performed_by"
+  }
+]

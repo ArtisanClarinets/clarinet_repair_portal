@@ -1,0 +1,28 @@
+{
+  "doctype": "DocType",
+  "name": "Instrument Preset Template",
+  "module": "clarinet_repair_portal",
+  "custom": 1,
+  "autoname": "field:template_name",
+  "title_field": "template_name",
+  "search_fields": "template_name, instrument_type, template_version",
+  "fields": [
+    {"fieldname": "template_name", "label": "Template Name", "fieldtype": "Data", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "instrument_type", "label": "Instrument Type", "fieldtype": "Select", "options": "B♭ Clarinet\nA Clarinet\nEb Clarinet\nBass Clarinet", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "description", "label": "Template Description", "fieldtype": "Small Text"},
+    {"fieldname": "linked_model", "label": "Associated Instrument Model", "fieldtype": "Link", "options": "Instrument Model Spec"},
+    {"fieldname": "typical_issues_checklist", "label": "Typical Issues Checklist", "fieldtype": "Table", "options": "Clarinet Anatomy Condition"},
+    {"fieldname": "standard_parts_required", "label": "Standard Parts", "fieldtype": "Table", "options": "Instrument Parts Requirement"},
+    {"fieldname": "estimated_repair_duration", "label": "Estimated Repair Duration (Days)", "fieldtype": "Int", "reqd": 1},
+    {"fieldname": "auto_apply", "label": "Auto-Apply to Repair Request", "fieldtype": "Button"},
+    {"fieldname": "is_active", "label": "Active Template", "fieldtype": "Check", "default": 1, "in_list_view": 1},
+    {"fieldname": "template_version", "label": "Template Version", "fieldtype": "Data"},
+    {"fieldname": "tags", "label": "Tags", "fieldtype": "Tag"}
+  ],
+  "permissions": [
+    {"role": "Repair Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Repair Technician", "read": 1, "write": 1},
+    {"role": "Reception", "read": 1},
+    {"role": "Customer", "read": 1}
+  ]
+}

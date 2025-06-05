@@ -1,0 +1,14 @@
+{
+  "doctype": "DocType",
+  "name": "Repair Pads Used",
+  "module": "Clarinet Repair Portal",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "pad_type", "fieldtype": "Data", "label": "Pad Type", "reqd": 1},
+    {"fieldname": "quantity", "fieldtype": "Int", "label": "Quantity", "reqd": 1},
+    {"fieldname": "location", "fieldtype": "Data", "label": "Location on Instrument"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ]
+}

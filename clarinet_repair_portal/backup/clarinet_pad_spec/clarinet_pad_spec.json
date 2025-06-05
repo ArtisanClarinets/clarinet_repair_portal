@@ -1,0 +1,62 @@
+{
+  "doctype": "DocType",
+  "name": "Clarinet Pad Spec",
+  "module": "clarinet_repair_portal",
+  "custom": 1,
+  "istable": 1,
+  "autoname": "field:pad_location",
+  "editable_grid": 1,
+  "fields": [
+    {
+      "fieldname": "pad_location",
+      "label": "Pad Location",
+      "fieldtype": "Data",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "pad_diameter_mm",
+      "label": "Pad Diameter (mm)",
+      "fieldtype": "Float",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "pad_material",
+      "label": "Material",
+      "fieldtype": "Select",
+      "options": "Leather\nSynthetic\nCork\nSkin",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "notes",
+      "label": "Notes",
+      "fieldtype": "Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Repair Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1
+    },
+    {
+      "role": "Repair Technician",
+      "read": 1,
+      "write": 1,
+      "submit": 1,
+      "create": 0,
+      "delete": 0
+    },
+    {
+      "role": "Reception",
+      "read": 1,
+      "write": 1,
+      "create": 0,
+      "delete": 0,
+      "submit": 1
+    }
+  ],
+  "is_submittable": 1
+}

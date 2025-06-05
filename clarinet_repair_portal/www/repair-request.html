@@ -1,0 +1,31 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<h1>Repair Request: {{ doc.name }}</h1>
+<p>Status: <strong>{{ doc.repair_status }}</strong></p>
+<p>Instrument: {{ doc.instrument_type }} – {{ doc.instrument_model }}</p>
+<p>Serial: {{ doc.serial_number }}</p>
+<p>Date Received: {{ doc.date_received }}</p>
+<p>Requested Completion: {{ doc.requested_completion_date }}</p>
+
+{% if doc.quotation_reference %}
+<p><a href="/app/quotation/{{ doc.quotation_reference }}">View Quotation</a></p>
+{% endif %}
+
+{% if doc.sales_invoice_reference %}
+<p><a href="/app/sales-invoice/{{ doc.sales_invoice_reference }}">View Invoice</a></p>
+{% endif %}
+
+<h3>Communication Log</h3>
+<ul>
+  {% for log in doc.customer_communication_log %}
+    <li>{{ log.communication_date }} – {{ log.subject }}: {{ log.content }}</li>
+  {% endfor %}
+</ul>
+
+<h3>Send a Message</h3>
+<form method="POST">
+  <input type="text" name="subject" placeholder="Subject" required><br>
+  <textarea name="content" placeholder="Your message..." required></textarea><br>
+  <button type="submit">Send</button>
+</form>
+{% endblock %}

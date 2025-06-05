@@ -1,0 +1,71 @@
+{
+  "doctype": "DocType",
+  "name": "Customer Consent Form",
+  "module": "clarinet_repair_portal",
+  "custom": 0,
+  "fields": [
+    {
+      "fieldname": "repair_request",
+      "fieldtype": "Link",
+      "label": "Linked Repair Request",
+      "options": "Repair Request",
+      "reqd": 1
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Customer",
+      "options": "Customer",
+      "reqd": 1
+    },
+    {
+      "fieldname": "signature",
+      "fieldtype": "Signature",
+      "label": "Signature"
+    },
+    {
+      "fieldname": "authorization_notes",
+      "fieldtype": "Long Text",
+      "label": "Authorization Notes"
+    },
+    {
+      "fieldname": "date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "reqd": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Repair Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1
+    },
+    {
+      "role": "Repair Technician",
+      "read": 1,
+      "write": 1,
+      "submit": 1,
+      "create": 0,
+      "delete": 0
+    },
+    {
+      "role": "Reception",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "submit": 1
+    }
+  ],
+  "autoname": "field:repair_request",
+  "title_field": "repair_request",
+  "issingle": 0,
+  "allow_copy": 1,
+  "in_list_view": 1,
+  "search_fields": "repair_request, customer, date",
+  "is_submittable": 1
+}

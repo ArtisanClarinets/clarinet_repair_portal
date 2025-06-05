@@ -1,9 +1,9 @@
 [project]
-name = "clarinet_repair_portal"
+name = "acoustics"
 authors = [
-    { name = "Dylan Thompson", email = "dylan@artisanclarinets.com"}
+    { name = "a", email = "a@a.conm"}
 ]
-description = "Clarinet Repair Management & CRM App with CRUD Operations"
+description = "a"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]

@@ -1,0 +1,21 @@
+{
+  "doctype": "DocType",
+  "name": "Repair Service Category",
+  "module": "clarinet_repair_portal",
+  "custom": 1,
+  "fields": [
+    {"fieldname": "category_name", "label": "Category Name", "fieldtype": "Data", "reqd": 1},
+    {"fieldname": "description", "label": "Description", "fieldtype": "Text"},
+    {"fieldname": "default_rate_markup", "label": "Default Markup %", "fieldtype": "Percent"},
+    {"fieldname": "active", "label": "Active", "fieldtype": "Check", "default": 1},
+    {"fieldname": "services", "label": "Service Items", "fieldtype": "Table", "options": "Repair Service Item"}
+  ],
+  "permissions": [
+    {"role": "Repair Administrator", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1},
+    {"role": "Repair Technician", "read": 1}
+  ],
+  "autoname": "field:category_name",
+  "track_changes": 1,
+  "allow_copy": 1,
+  "is_submittable": 1
+}

@@ -1,0 +1,23 @@
+{
+  "doctype": "DocType",
+  "name": "Technician Task Queue",
+  "module": "clarinet_repair_portal",
+  "autoname": "field:task_id",
+  "custom": 0,
+  "fields": [
+    {"fieldname": "task_id", "fieldtype": "Data", "label": "Task ID", "reqd": 1},
+    {"fieldname": "repair_request", "fieldtype": "Link", "label": "Repair Request", "options": "Repair Request", "reqd": 1},
+    {"fieldname": "technician", "fieldtype": "Link", "label": "Technician", "options": "User", "reqd": 1},
+    {"fieldname": "priority", "fieldtype": "Select", "label": "Priority", "options": "High\nMedium\nLow", "default": "Medium"},
+    {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Pending\nIn Progress\nCompleted", "default": "Pending"},
+    {"fieldname": "due_date", "fieldtype": "Date", "label": "Due Date"},
+    {"fieldname": "expected_duration", "fieldtype": "Int", "label": "Expected Duration (min)"},
+    {"fieldname": "start_time", "fieldtype": "Datetime", "label": "Start Time"},
+    {"fieldname": "end_time", "fieldtype": "Datetime", "label": "End Time"},
+    {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"}
+  ],
+  "permissions": [
+    {"role": "Repair Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Repair Technician", "read": 1, "write": 1}
+  ]
+}

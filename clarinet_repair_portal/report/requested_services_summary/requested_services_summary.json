@@ -1,0 +1,16 @@
+{
+  "doctype": "Report",
+  "name": "Requested Services Summary",
+  "ref_doctype": "Requested Service",
+  "report_type": "Query Report",
+  "is_standard": "Yes",
+  "module": "clarinet_repair_portal",
+  "add_total_row": 1,
+  "columns": [
+    {"label": "Service Name", "fieldname": "service_name", "fieldtype": "Data", "width": 200},
+    {"label": "Service Category", "fieldname": "service_category", "fieldtype": "Data", "width": 120},
+    {"label": "Estimated Hours", "fieldname": "estimated_hours", "fieldtype": "Float", "width": 100},
+    {"label": "Estimated Cost", "fieldname": "estimated_cost", "fieldtype": "Currency", "width": 100},
+    {"label": "Notes", "fieldname": "notes", "fieldtype": "Data", "width": 250}
+  ]
+}

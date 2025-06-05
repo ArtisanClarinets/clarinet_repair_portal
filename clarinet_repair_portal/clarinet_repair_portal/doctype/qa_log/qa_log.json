@@ -1,0 +1,23 @@
+{
+  "doctype": "DocType",
+  "name": "QA Log",
+  "module": "clarinet_repair_portal",
+  "custom": 1,
+  "istable": 1,
+  "editable_grid": 1,
+  "autoname": "field:qa_step",
+  "fields": [
+    {"fieldname": "qa_step", "label": "QA Step", "fieldtype": "Link", "options": "Repair QA Step", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Pending\nCompleted\nFailed", "reqd": 1, "in_list_view": 1},
+    {"fieldname": "technician", "label": "Technician", "fieldtype": "Link", "options": "User", "reqd": 1},
+    {"fieldname": "completed_date", "label": "Completed Date", "fieldtype": "Date"},
+    {"fieldname": "notes", "label": "Notes", "fieldtype": "Small Text"},
+    {"fieldname": "order", "label": "Sequence Order", "fieldtype": "Int"},
+    {"fieldname": "photo", "label": "Photo Evidence", "fieldtype": "Attach Image"}
+  ],
+  "permissions": [
+    {"role": "Repair Administrator", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Repair Technician", "read": 1, "write": 1},
+    {"role": "Reception", "read": 1}
+  ]
+}

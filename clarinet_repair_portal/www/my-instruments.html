@@ -1,0 +1,18 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+{% if frappe.session.user != "Guest" %}
+<div class="container">
+  <h2>Your Instruments</h2>
+  <ul class="list-group">
+    {% for inst in frappe.get_all('Customer Instrument Profile', filters={'customer': frappe.session.user}, fields=['name','instrument_type','serial_number']) %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ inst.instrument_type }} - {{ inst.serial_number }}
+        <a class="btn btn-sm btn-primary" href="/instrument-profile?name={{ inst.name }}">View</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% else %}
+<p>Please log in to view your instruments.</p>
+{% endif %}
+{% endblock %}

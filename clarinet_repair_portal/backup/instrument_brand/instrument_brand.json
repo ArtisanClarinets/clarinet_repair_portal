@@ -1,0 +1,39 @@
+{
+  "doctype": "DocType",
+  "name": "Instrument Brand",
+  "module": "Clarinet Repair Portal",
+  "custom": 1,
+  "fields": [
+    {
+      "fieldname": "brand_name",
+      "fieldtype": "Data",
+      "label": "Brand Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "country_of_origin",
+      "fieldtype": "Data",
+      "label": "Country of Origin"
+    },
+    {
+      "fieldname": "website",
+      "fieldtype": "Data",
+      "label": "Website",
+      "options": "URL"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "istable": 0,
+  "editable_grid": 1,
+  "track_changes": 1,
+  "track_views": 1,
+  "allow_copy": 0
+}

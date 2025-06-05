@@ -1,0 +1,21 @@
+{
+  "doctype": "DocType",
+  "name": "Final Setup Report",
+  "module": "clarinet_repair_portal",
+  "istable": 1,
+  "custom": 1,
+  "fields": [
+    {"fieldname": "setup_technician", "label": "Setup Technician", "fieldtype": "Link", "options": "User"},
+    {"fieldname": "setup_date", "label": "Setup Date", "fieldtype": "Date", "default": "Today"},
+    {"fieldname": "keys_removed", "label": "All Keys Removed & Reinstalled", "fieldtype": "Check"},
+    {"fieldname": "adjustments_done", "label": "Adjustments Completed", "fieldtype": "Small Text"},
+    {"fieldname": "pads_changed", "label": "Pads Changed", "fieldtype": "Check"},
+    {"fieldname": "seals_ensured", "label": "Body Seals Verified", "fieldtype": "Check"},
+    {"fieldname": "ready_for_sale", "label": "Marked Ready for Sale", "fieldtype": "Check"},
+    {"fieldname": "remarks", "label": "Remarks", "fieldtype": "Small Text"}
+  ],
+  "permissions": [
+    {"role": "Repair Technician", "read": 1, "write": 1, "create": 1},
+    {"role": "QA Specialist", "read": 1, "write": 1, "create": 1}
+  ]
+}

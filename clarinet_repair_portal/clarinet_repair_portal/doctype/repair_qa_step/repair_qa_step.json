@@ -1,0 +1,14 @@
+{
+  "doctype": "DocType",
+  "name": "Repair QA Step",
+  "module": "Clarinet Repair Portal",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "qa_check", "fieldtype": "Data", "label": "QA Check", "reqd": 1},
+    {"fieldname": "result", "fieldtype": "Select", "label": "Result", "options": "Pass\nFail\nN/A", "reqd": 1},
+    {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ]
+}

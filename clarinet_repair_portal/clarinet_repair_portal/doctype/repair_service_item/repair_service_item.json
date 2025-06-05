@@ -1,0 +1,60 @@
+{
+  "doctype": "DocType",
+  "name": "Repair Service Item",
+  "module": "clarinet_repair_portal",
+  "custom": 1,
+  "fields": [
+    {
+      "fieldname": "service_name",
+      "fieldtype": "Data",
+      "label": "Service Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "default_rate",
+      "fieldtype": "Currency",
+      "label": "Default Rate"
+    },
+    {
+      "fieldname": "duration_estimate",
+      "fieldtype": "Int",
+      "label": "Duration (min)"
+    },
+    {
+      "fieldname": "active",
+      "fieldtype": "Check",
+      "label": "Active",
+      "default": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "category",
+      "fieldtype": "Link",
+      "label": "Category",
+      "options": "Repair Service Category"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Repair Administrator",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1
+    },
+    {
+      "role": "Repair Technician",
+      "read": 1
+    },
+    {
+      "role": "Reception",
+      "read": 1
+    }
+  ],
+  "is_submittable": 1
+}

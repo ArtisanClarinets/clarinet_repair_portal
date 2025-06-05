@@ -1,0 +1,8 @@
+{
+  "doctype": "Page",
+  "name": "repair_dashboard",
+  "title": "Repair Dashboard",
+  "module": "clarinet_repair_portal",
+  "custom": 1,
+  "content": "<div class=\"dashboard\">\n  <div class=\"widget\">\n    <h4>Repairs In Progress</h4>\n    <div class=\"widget-content\">\n      <a href='/app/query-report/Repairs Awaiting Parts'>Repairs Awaiting Parts</a><br>\n      <a href='/app/query-report/QA Incomplete Repairs'>QA Incomplete Repairs</a><br>\n      <a href='/app/list/Repair Request'>All Repair Requests</a>\n    </div>\n  </div>\n  <div class=\"widget\">\n    <h4>Technician Tools</h4>\n    <div class=\"widget-content\">\n      <a href='/app/list/Tool Usage Log'>Tool Usage Logs</a><br>\n      <a href='/app/list/Playtest Log'>Playtest Logs</a><br>\n      <a href='/app/list/Repair Inspection'>Repair Inspections</a>\n    </div>\n  </div>\n  <div class=\"widget\">\n    <h4>Analytics</h4>\n    <div class=\"widget-content\">\n      <a href='/app/query-report/Pad Usage Analysis'>Pad Usage Report</a><br>\n      <a href='/app/query-report/Requested Services Summary'>Service Request Summary</a>\n    </div>\n  </div>\n</div>"
+}

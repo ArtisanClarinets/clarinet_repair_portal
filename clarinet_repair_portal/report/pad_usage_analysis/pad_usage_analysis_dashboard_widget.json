@@ -1,0 +1,17 @@
+{
+  "doctype": "Dashboard Chart",
+  "chart_name": "Pad Usage by Material",
+  "chart_type": "Group By",
+  "document_type": "Repair Pads Used",
+  "based_on": "creation",
+  "timespan": "Last Year",
+  "time_interval": "Monthly",
+  "value_based_on": "name",
+  "aggregation": "Count",
+  "group_by": "material",
+  "filters_json": "{}",
+  "is_custom": 1,
+  "add_to_dashboard": 1,
+  "dashboard": "Repair Portal Dashboard",
+  "enabled": 1
+}

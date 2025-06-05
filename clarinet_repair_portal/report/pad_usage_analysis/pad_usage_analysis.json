@@ -1,0 +1,46 @@
+{
+  "name": "Pad Usage Analysis",
+  "doctype": "Report",
+  "is_standard": "Yes",
+  "report_type": "Query Report",
+  "ref_doctype": "Repair Pads Used",
+  "module": "clarinet_repair_portal",
+  "filters": [
+    {
+      "fieldname": "from_date",
+      "label": "From Date",
+      "fieldtype": "Date",
+      "default": "Today - 30",
+      "reqd": 1
+    },
+    {
+      "fieldname": "to_date",
+      "label": "To Date",
+      "fieldtype": "Date",
+      "default": "Today",
+      "reqd": 1
+    },
+    {
+      "fieldname": "material",
+      "label": "Pad Material",
+      "fieldtype": "Data",
+      "default": "",
+      "reqd": 0
+    },
+    {
+      "fieldname": "size",
+      "label": "Pad Size",
+      "fieldtype": "Data",
+      "default": "",
+      "reqd": 0
+    },
+    {
+      "fieldname": "technician",
+      "label": "Technician",
+      "fieldtype": "Link",
+      "options": "User",
+      "default": "",
+      "reqd": 0
+    }
+  ]
+}

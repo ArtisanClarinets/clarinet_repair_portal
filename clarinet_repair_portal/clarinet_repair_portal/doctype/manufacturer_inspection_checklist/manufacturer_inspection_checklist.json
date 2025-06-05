@@ -1,0 +1,16 @@
+{
+  "doctype": "DocType",
+  "name": "Manufacturer Inspection Checklist",
+  "module": "clarinet_repair_portal",
+  "istable": 1,
+  "custom": 1,
+  "fields": [
+    {"fieldname": "check_item", "label": "Check Item", "fieldtype": "Data"},
+    {"fieldname": "result", "label": "Result", "fieldtype": "Select", "options": "Pass\nFail\nN/A"},
+    {"fieldname": "remarks", "label": "Remarks", "fieldtype": "Small Text"}
+  ],
+  "permissions": [
+    {"role": "Repair Technician", "read": 1, "write": 1, "create": 1},
+    {"role": "QA Specialist", "read": 1, "write": 1, "create": 1}
+  ]
+}

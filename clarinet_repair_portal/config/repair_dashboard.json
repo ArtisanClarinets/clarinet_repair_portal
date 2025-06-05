@@ -1,0 +1,38 @@
+{
+  "label": "Repair Dashboard",
+  "module": "clarinet_repair_portal",
+  "icon": "octicon octicon-tools",
+  "type": "module",
+  "link": "List/Repair Request",
+  "onboard_present": 1,
+  "shortcuts": [
+    {
+      "label": "In Progress Repairs",
+      "type": "DocType",
+      "name": "Repair Request",
+      "view": "List",
+      "filters": {"repair_status": "In Progress"}
+    },
+    {
+      "label": "Awaiting Parts",
+      "type": "DocType",
+      "name": "Repair Request",
+      "view": "List",
+      "filters": {"repair_status": "Awaiting Parts"}
+    },
+    {
+      "label": "QA in Progress",
+      "type": "DocType",
+      "name": "Repair Request",
+      "view": "List",
+      "filters": {"qa_status": "In Progress"}
+    },
+    {
+      "label": "Completed Repairs",
+      "type": "DocType",
+      "name": "Repair Request",
+      "view": "List",
+      "filters": {"repair_status": "Completed"}
+    }
+  ]
+}

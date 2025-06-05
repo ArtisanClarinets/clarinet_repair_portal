@@ -1,0 +1,26 @@
+{
+  "doctype": "Workflow",
+  "is_active": 1,
+  "workflow_name": "Repair Request Workflow",
+  "document_type": "Repair Request",
+  "state_field": "repair_status",
+  "send_email_alert": 0,
+  "workflow_states": [
+    {"state": "Pending", "doc_status": 0, "update_field": "repair_status", "update_value": "Pending", "allow_edit": "Repair Technician"},
+    {"state": "Inspected", "doc_status": 0, "update_field": "repair_status", "update_value": "Inspected", "allow_edit": "Repair Technician"},
+    {"state": "Quoted", "doc_status": 0, "update_field": "repair_status", "update_value": "Quoted", "allow_edit": "Repair Administrator"},
+    {"state": "In Progress", "doc_status": 0, "update_field": "repair_status", "update_value": "In Progress", "allow_edit": "Repair Technician"},
+    {"state": "Awaiting Parts", "doc_status": 0, "update_field": "repair_status", "update_value": "Awaiting Parts", "allow_edit": "Repair Administrator"},
+    {"state": "Completed", "doc_status": 1, "update_field": "repair_status", "update_value": "Completed", "allow_edit": "Repair Administrator"},
+    {"state": "Delivered", "doc_status": 1, "update_field": "repair_status", "update_value": "Delivered", "allow_edit": "Reception"}
+  ],
+  "transitions": [
+    {"state": "Pending", "action": "Inspect", "next_state": "Inspected", "allowed": "Repair Technician"},
+    {"state": "Inspected", "action": "Quote", "next_state": "Quoted", "allowed": "Repair Administrator"},
+    {"state": "Quoted", "action": "Start Repair", "next_state": "In Progress", "allowed": "Repair Technician"},
+    {"state": "In Progress", "action": "Parts Needed", "next_state": "Awaiting Parts", "allowed": "Repair Technician"},
+    {"state": "Awaiting Parts", "action": "Receive Parts", "next_state": "In Progress", "allowed": "Repair Administrator"},
+    {"state": "In Progress", "action": "Complete Repair", "next_state": "Completed", "allowed": "Repair Administrator"},
+    {"state": "Completed", "action": "Deliver", "next_state": "Delivered", "allowed": "Reception"}
+  ]
+}

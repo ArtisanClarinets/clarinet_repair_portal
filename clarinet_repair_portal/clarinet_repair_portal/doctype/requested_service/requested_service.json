@@ -1,0 +1,14 @@
+{
+  "doctype": "DocType",
+  "name": "Requested Service",
+  "module": "Clarinet Repair Portal",
+  "istable": 1,
+  "fields": [
+    {"fieldname": "service_description", "fieldtype": "Data", "label": "Service Description", "reqd": 1},
+    {"fieldname": "estimated_hours", "fieldtype": "Float", "label": "Estimated Hours"},
+    {"fieldname": "estimated_cost", "fieldtype": "Currency", "label": "Estimated Cost"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+  ]
+}

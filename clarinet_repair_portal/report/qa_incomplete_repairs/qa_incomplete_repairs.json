@@ -1,0 +1,19 @@
+{
+  "doctype": "Report",
+  "name": "QA Incomplete Repairs",
+  "ref_doctype": "Repair Request",
+  "report_type": "Query Report",
+  "is_standard": "Yes",
+  "module": "clarinet_repair_portal",
+  "filters": [
+    {"fieldname": "repair_status", "label": "Repair Status", "fieldtype": "Select", "options": "Pending\nInspected\nQuoted\nIn Progress\nAwaiting Parts\nCompleted\nDelivered", "default": "In Progress"}
+  ],
+  "add_total_row": 0,
+  "columns": [
+    {"label": "Repair ID", "fieldname": "repair_id", "fieldtype": "Data", "width": 120},
+    {"label": "Customer", "fieldname": "customer", "fieldtype": "Link", "options": "Customer", "width": 150},
+    {"label": "Repair Technician", "fieldname": "repair_technician", "fieldtype": "Link", "options": "User", "width": 150},
+    {"label": "QA Checklist Entries", "fieldname": "qa_entries", "fieldtype": "Int", "width": 100},
+    {"label": "Notes", "fieldname": "internal_notes", "fieldtype": "Data", "width": 250}
+  ]
+}
