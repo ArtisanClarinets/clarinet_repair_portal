@@ -1,0 +1,32 @@
+{
+  "doctype": "DocType",
+  "name": "Repair Intake",
+  "module": "Clarinet Repair Portal",
+  "autoname": "RI-.YYYY.-.#####",
+  "title_field": "instrument",
+  "track_changes": 1,
+  "is_submittable": 1,
+  "fields": [
+    {"fieldname": "customer", "label": "Customer", "fieldtype": "Link", "options": "Customer", "reqd": 1},
+    {"fieldname": "contact_person", "label": "Contact Person", "fieldtype": "Link", "options": "Contact", "get_query": "frappe.contacts.get_contact_query"},
+    {"fieldname": "instrument", "label": "Instrument", "fieldtype": "Link", "options": "Instrument", "reqd": 1},
+    {"fieldname": "repair_type", "label": "Repair Type", "fieldtype": "Select", "options": "Basic\nOverhaul\nCrack Repair\nWarranty\nEvaluation", "reqd": 1},
+    {"fieldname": "priority", "label": "Priority", "fieldtype": "Select", "options": "Low\nNormal\nUrgent"},
+    {"fieldname": "desired_completion_date", "label": "Desired Completion Date", "fieldtype": "Date"},
+    {"fieldname": "drop_off_method", "label": "Drop-Off Method", "fieldtype": "Select", "options": "In-Person\nMail-In\nPickup"},
+    {"fieldname": "initial_description", "label": "Initial Problem Description", "fieldtype": "Small Text"},
+    {"fieldname": "intake_checklist", "label": "Checklist", "fieldtype": "Table", "options": "Intake Checklist Item"},
+    {"fieldname": "initial_condition_images", "label": "Initial Condition Images", "fieldtype": "Attach Image", "allow_multiple": 1},
+    {"fieldname": "terms_accepted", "label": "Customer Agreed to Terms", "fieldtype": "Check", "reqd": 1},
+    {"fieldname": "signature", "label": "Signature", "fieldtype": "Attach", "reqd": 1},
+    {"fieldname": "intake_received_by", "label": "Received By", "fieldtype": "Link", "options": "User"},
+    {"fieldname": "intake_datetime", "label": "Intake Date/Time", "fieldtype": "Datetime", "default": "now"},
+    {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Draft\nReceived\nEscalated", "default": "Draft"}
+  ],
+  "permissions": [
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Workshop Manager", "read": 1, "write": 1, "create": 1},
+    {"role": "Technician", "read": 1},
+    {"role": "Customer", "read": 1, "create": 1, "if_owner": 1}
+  ]
+}
