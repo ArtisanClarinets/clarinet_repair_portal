@@ -9,6 +9,9 @@
     {"fieldname": "location", "fieldtype": "Data", "label": "Location on Instrument"}
   ],
   "permissions": [
-    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+    {"role": "Workshop Manager", "read": 1, "write": 1, "create": 1},
+    {"role": "Technician", "read": 1, "write": 1},
+    {"role": "Customer", "read": 1, "if_owner": 1}
   ]
 }

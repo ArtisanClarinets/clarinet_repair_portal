@@ -6,35 +6,63 @@
   "custom": 0,
   "sort_field": "modified",
   "sort_order": "desc",
+  "is_submittable": 1,
   "permissions": [
-    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1},
-    {"role": "Repair Technician", "read": 1, "write": 1},
-    {"role": "Reception", "read": 1, "write": 1, "create": 1, "submit": 1},
-    {"role": "Sales User", "read": 1},
-    {"role": "Customer", "read": 1}
+    {"role": "System Manager", "read": 1, "write": 1, "create": 1, "submit": 1, "cancel": 1, "delete": 1},
+    {"role": "Workshop Manager", "read": 1, "write": 1, "create": 1, "submit": 1},
+    {"role": "Technician", "read": 1, "write": 1},
+    {"role": "Customer", "read": 1, "if_owner": 1}
   ],
   "fields": [
+    {"fieldtype": "Section Break", "label": "Customer & Instrument"},
     {"fieldname": "customer", "label": "Customer", "fieldtype": "Link", "options": "Customer", "reqd": 1},
     {"fieldname": "contact", "label": "Contact", "fieldtype": "Link", "options": "Contact", "fetch_from": "customer.primary_contact"},
-    {"fieldname": "instrument_type", "label": "Instrument Type", "fieldtype": "Select", "options": "A\nB♭\nE♭\nC\nBass", "reqd": 1},
-    {"fieldname": "instrument_brand", "label": "Instrument Brand", "fieldtype": "Data"},
-    {"fieldname": "instrument_model", "label": "Instrument Model", "fieldtype": "Data"},
-    {"fieldname": "serial_number", "label": "Serial Number", "fieldtype": "Data"},
-    {"fieldname": "date_received", "label": "Date Received", "fieldtype": "Date", "default": "Today"},
-    {"fieldname": "requested_completion_date", "label": "Requested Completion Date", "fieldtype": "Date"},
-    {"fieldname": "priority", "label": "Priority", "fieldtype": "Select", "options": "Low\nMedium\nHigh", "default": "Low"},
+    {"fieldname": "instrument", "label": "Instrument", "fieldtype": "Link", "options": "Instrument", "reqd": 1},
+    {"fieldname": "instrument_tracker", "label": "Instrument Tracker", "fieldtype": "Link", "options": "Instrument Tracker"},
+
+    {"fieldtype": "Section Break", "label": "Repair Overview"},
     {"fieldname": "repair_type", "label": "Repair Type", "fieldtype": "Select", "options": "Maintenance\nOverhaul\nCrack Repair\nCustomization", "reqd": 1},
     {"fieldname": "repair_technician", "label": "Repair Technician", "fieldtype": "Link", "options": "User"},
-    {"fieldname": "repair_status", "label": "Repair Status", "fieldtype": "Select", "options": "Pending\nIn Progress\nAwaiting Parts\nCompleted\nDelivered", "default": "Pending"},
-    {"fieldname": "internal_notes", "label": "Internal Notes", "fieldtype": "Text Editor"},
+    {"fieldname": "repair_status", "label": "Repair Status", "fieldtype": "Select", "options": "Received\nIn Assessment\nWaiting for Approval\nAssigned\nPending\nIn Progress\nAwaiting Parts\nCompleted\nDelivered", "default": "Received"},
+    {"fieldname": "priority", "label": "Priority", "fieldtype": "Select", "options": "Low\nMedium\nHigh", "default": "Low"},
+    {"fieldname": "requested_completion_date", "label": "Requested Completion Date", "fieldtype": "Date"},
+    {"fieldname": "repair_bom", "label": "Repair BOM", "fieldtype": "Link", "options": "Repair BOM"},
 
+    {"fieldtype": "Section Break", "label": "Requested Work & Intake"},
+    {"fieldname": "requested_services", "label": "Requested Services", "fieldtype": "Table", "options": "Requested Service"},
+    {"fieldname": "intake_checklist", "label": "Intake Checklist", "fieldtype": "Table", "options": "Intake Checklist Item"},
+    {"fieldname": "photos_before_intake", "label": "Photos Before Intake", "fieldtype": "Attach Image", "allow_multiple": 1},
+    {"fieldname": "customer_signature", "label": "Customer Signature", "fieldtype": "Attach Image"},
+    {"fieldname": "customer_consent_form", "label": "Consent Form", "fieldtype": "Link", "options": "Customer Consent Form"},
+
+    {"fieldtype": "Section Break", "label": "Repair Execution"},
+    {"fieldname": "repair_steps", "label": "Repair Steps", "fieldtype": "Table", "options": "Repair Step"},
     {"fieldname": "repair_log", "label": "Repair Log", "fieldtype": "Table", "options": "Repair Log Entry"},
-    {"fieldname": "customer_communication_log", "label": "Customer Communication Log", "fieldtype": "Table", "options": "Communication"},
+    {"fieldname": "repair_pads_used", "label": "Repair Pads Used", "fieldtype": "Table", "options": "Repair Pads Used"},
+    {"fieldname": "tool_usage_log", "label": "Tool Usage Log", "fieldtype": "Table", "options": "Tool Usage Log"},
+
+    {"fieldtype": "Section Break", "label": "Inspection & QA"},
+    {"fieldname": "repair_qa_checklist", "label": "QA Checklist", "fieldtype": "Table", "options": "Repair QA Step"},
+    {"fieldname": "inspection_condition_log", "label": "Condition Log", "fieldtype": "Table", "options": "Instrument Condition Log"},
+    {"fieldname": "instrument_crack_progression", "label": "Crack Progression", "fieldtype": "Table", "options": "Instrument Crack Progression"},
+    {"fieldname": "clarinet_anatomy_condition", "label": "Anatomy Condition Log", "fieldtype": "Table", "options": "Clarinet Anatomy Condition"},
+
+    {"fieldtype": "Section Break", "label": "Finalization"},
+    {"fieldname": "playtest_log", "label": "Playtest Log", "fieldtype": "Link", "options": "Playtest Log"},
+    {"fieldname": "vacuum_test_result", "label": "Vacuum Test Result", "fieldtype": "Link", "options": "Vacuum Test Result"},
+    {"fieldname": "ultrasonic_cleaning_log", "label": "Ultrasonic Cleaning Log", "fieldtype": "Link", "options": "Ultrasonic Cleaning Log"},
+    {"fieldname": "final_setup_report", "label": "Final Setup Report", "fieldtype": "Link", "options": "Final Setup Report"},
+
+    {"fieldtype": "Section Break", "label": "Manufacturer & History"},
+    {"fieldname": "manufacturer_intake_log", "label": "Manufacturer Intake Log", "fieldtype": "Link", "options": "Manufacturer Intake Log"},
+    {"fieldname": "manufacturer_playtest_log", "label": "Manufacturer Playtest Log", "fieldtype": "Link", "options": "Manufacturer Playtest Log"},
+    {"fieldname": "maintenance_log", "label": "Maintenance Log", "fieldtype": "Table", "options": "Maintenance Log"},
+
+    {"fieldtype": "Section Break", "label": "Tracking & Docs"},
     {"fieldname": "quotation_reference", "label": "Quotation Reference", "fieldtype": "Link", "options": "Quotation"},
     {"fieldname": "sales_invoice_reference", "label": "Sales Invoice Reference", "fieldtype": "Link", "options": "Sales Invoice"},
-
-    {"fieldname": "requested_services", "label": "Requested Services", "fieldtype": "Table", "options": "Requested Service"},
-    {"fieldname": "repair_pads_used", "label": "Repair Pads Used", "fieldtype": "Table", "options": "Repair Pads Used"},
-    {"fieldname": "repair_qa_checklist", "label": "QA Checklist", "fieldtype": "Table", "options": "Repair QA Step"}
+    {"fieldname": "date_received", "label": "Date Received", "fieldtype": "Date", "default": "Today"},
+    {"fieldname": "internal_notes", "label": "Internal Notes", "fieldtype": "Text Editor"},
+    {"fieldname": "customer_communication_log", "label": "Customer Communication Log", "fieldtype": "Table", "options": "Communication"}
   ]
 }

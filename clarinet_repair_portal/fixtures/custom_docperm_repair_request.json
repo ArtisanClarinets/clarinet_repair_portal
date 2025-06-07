@@ -1,0 +1,53 @@
+[
+  {
+    "doctype": "Custom DocPerm",
+    "name": "Repair Request - System Manager",
+    "role": "System Manager",
+    "permlevel": 0,
+    "read": 1,
+    "write": 1,
+    "create": 1,
+    "delete": 1,
+    "submit": 1,
+    "cancel": 1,
+    "amend": 1,
+    "report": 1,
+    "export": 1,
+    "print": 1,
+    "share": 1,
+    "email": 1,
+    "apply_user_permissions": 0,
+    "doctype_name": "Repair Request"
+  },
+  {
+    "doctype": "Custom DocPerm",
+    "name": "Repair Request - Repair Technician",
+    "role": "Repair Technician",
+    "permlevel": 0,
+    "read": 1,
+    "write": 1,
+    "create": 1,
+    "submit": 1,
+    "share": 1,
+    "doctype_name": "Repair Request"
+  },
+  {
+    "doctype": "Custom DocPerm",
+    "name": "Repair Request - Reception",
+    "role": "Reception",
+    "permlevel": 0,
+    "read": 1,
+    "write": 1,
+    "create": 1,
+    "submit": 1,
+    "doctype_name": "Repair Request"
+  },
+  {
+    "doctype": "Custom DocPerm",
+    "name": "Repair Request - Customer",
+    "role": "Customer",
+    "permlevel": 0,
+    "read": 1,
+    "doctype_name": "Repair Request"
+  }
+]

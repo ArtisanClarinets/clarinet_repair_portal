@@ -38,5 +38,35 @@ frappe.ui.form.on("Repair Request", {
         }, "Actions");
       }
     }
+  },
+
+  customer(frm) {
+    if (frm.doc.customer) {
+      frappe.db.get_list("Instrument", {
+        filters: { customer: frm.doc.customer },
+        fields: ["name", "instrument_type", "brand", "model"],
+        limit: 50
+      }).then(instruments => {
+        if (instruments.length > 0) {
+          frappe.prompt([
+            {
+              label: "Select Instrument",
+              fieldname: "instrument",
+              fieldtype: "Link",
+              options: "Instrument",
+              reqd: true
+            }
+          ], (values) => {
+            frm.set_value("instrument", values.instrument);
+          }, "Customer Instruments", "Choose");
+        }
+      });
+    }
+  },
+
+  repair_type(frm) {
+    if (frm.doc.repair_type === "Customization" && (!frm.doc.requested_services || frm.doc.requested_services.length === 0)) {
+      frappe.show_alert("Customization selected: Please add at least one requested service.", 5);
+    }
   }
 });
